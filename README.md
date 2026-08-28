@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UnsaidWords
+
+A private archive for the feelings you never said out loud — gratitude, apologies, admiration, or frustration you kept to yourself. Built with Next.js, TypeScript, and Supabase.
+
+## Live Website
+
+https://unsaid-words-five.vercel.app
+
+## Overview
+
+UnsaidWords lets you privately record feelings toward people you never voiced them to. Entries are tied to your account only. The app schedules gentle follow-ups to ask whether a feeling has changed over time.
+
+## Features
+
+* Private, per-user archive protected by Supabase Row Level Security
+* Categorized entries: Gratitude, Apology, Admiration, Frustration
+* Scheduled follow-ups (1 week / 1 month / 3 months) with status tracking
+* Authentication (sign up, login, protected routes)
+* Insights view for patterns across entries
+* PDF export in Arabic and English
+* Installable PWA with offline support
+* Fully responsive design
+
+## Built With
+
+* Next.js
+* TypeScript
+* Tailwind CSS
+* Supabase (Auth, PostgreSQL, RLS)
+* Lucide React
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+git clone https://github.com/SHAHENDA78/unsaid-words.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Navigate to the project:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+cd unsaid-words
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Install dependencies:
 
-## Learn More
+```
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+Add environment variables in `.env.local`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_supabase_key
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Run the development server:
 
-## Deploy on Vercel
+```
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Open your browser:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+http://localhost:3000
+```
+
+## Database
+
+**feelings** table — id, user_id, type, person_name, content, created_at, follow_up_at, follow_up_status. Protected by Row Level Security so each user only accesses their own entries.
+
+## Contact
+
+LinkedIn: https://www.linkedin.com/in/shahenda-shaheen-6a907423b
+GitHub: https://github.com/SHAHENDA78
+Email: shahendashaheen1@gmail.com
